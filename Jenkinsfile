@@ -43,9 +43,9 @@ pipeline {
     stage('Stage4') {
       steps {
         sh 'echo Stage4'
-        //retry(3) {
-        //  sh 'mvn build'
-       // }
+        retry(3) {
+          sh 'mvn build'
+        }
       }
     }
     stage('Stage-Parallel') {
